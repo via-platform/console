@@ -1,0 +1,28 @@
+{
+  "name": "console",
+  "version": "0.0.0",
+  "description": "A visual representation of all of the informational and error messages that Via outputs.",
+  "main": "./lib/main",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "via",
+    "console"
+  ],
+  "repository": "https://github.com/via-platform/console",
+  "author": "Dakota Gordon",
+  "engines": {
+    "via": "^0.8.3-alpha"
+  },
+  "dependencies": {
+    "etch": "^0.12.8",
+    "moment": "^2.20.1",
+    "via-table": "^0.2.3"
+  },
+  "deserializers": {
+    "Console": "deserialize"
+  },
+  "providedServices": {},
+  "configSchema": {}
+}

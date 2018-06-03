@@ -1,0 +1,90 @@
+@import "variables";
+@import "ui-variables";
+
+.console
+{
+    background: @pane-background-color;
+
+    .via-table
+    {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .thead
+        {
+            .td:first-child
+            {
+                padding-left: 30px;
+            }
+        }
+
+        .tr
+        {
+            display: flex;
+            height: 25px;
+            border-bottom: 1px solid fade(@header-border-color, 50%);
+            position: relative;
+
+            .td
+            {
+                flex: 1;
+                font-size: 11px;
+                padding: 0 10px;
+                line-height: 24px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-weight: 700;
+                -webkit-font-smoothing: antialiased;
+
+                &:first-child
+                {
+                    padding-left: 30px;
+                }
+
+                &:last-child
+                {
+                    text-align: right;
+                    color: @text-color-subtle;
+                }
+            }
+
+            &.warning, &.error
+            {
+                background: fade(@background-color-warning, 8%);
+
+                &::before
+                {
+                    width: 12px;
+                    height: 12px;
+                    content: "";
+                    background: url('via://console/images/warning.svg') 0 1px no-repeat;
+                    background-size: 12px auto;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 9px;
+                    margin: auto 0;
+                }
+            }
+
+            &.error
+            {
+                background: fade(@primary-color-down, 8%);
+
+                &::before
+                {
+                    background: url('via://console/images/error.svg') 0 0 no-repeat;
+                    background-size: 12px auto;
+                }
+            }
+        }
+
+        .tbody
+        {
+            flex: 1;
+            overflow: auto;
+        }
+    }
+}
