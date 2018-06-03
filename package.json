@@ -23,6 +23,12 @@
   "deserializers": {
     "Console": "deserialize"
   },
-  "providedServices": {},
+  "consumedServices": {
+      "status-bar": {
+        "versions": {
+          "^0.1.0": "consumeStatusBar"
+        }
+      }
+  },
   "configSchema": {}
 }

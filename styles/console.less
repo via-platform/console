@@ -16,6 +16,21 @@
             .td:first-child
             {
                 padding-left: 30px;
+                position: relative;
+
+                &::before
+                {
+                    width: 14px;
+                    height: 12px;
+                    content: "";
+                    background: url('via://console/images/console.svg') 0 2px no-repeat;
+                    background-size: 12px auto;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 8px;
+                    margin: auto 0;
+                }
             }
         }
 
@@ -50,7 +65,7 @@
                 }
             }
 
-            &.warning, &.error
+            &.console-warning, &.console-error, &.console-alert
             {
                 background: fade(@background-color-warning, 8%);
 
@@ -69,7 +84,7 @@
                 }
             }
 
-            &.error
+            &.console-error
             {
                 background: fade(@primary-color-down, 8%);
 
@@ -79,12 +94,79 @@
                     background-size: 12px auto;
                 }
             }
+
+            &.console-alert
+            {
+                background: fade(@primary-color, 8%);
+
+                &::before
+                {
+                    background: url('via://console/images/alert.svg') 0 0 no-repeat;
+                    background-size: 12px auto;
+                }
+            }
         }
 
         .tbody
         {
             flex: 1;
             overflow: auto;
+        }
+    }
+}
+
+.console-status
+{
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    background-size: 12px auto;
+    background-repeat: no-repeat;
+
+    &.console-empty, &.console-info
+    {
+        background-image: url('via://console/images/info.svg');
+        background-position: 9px 8px;
+
+        &:hover, &:active
+        {
+            background-image: url('via://console/images/info-white.svg');
+        }
+    }
+
+    &.console-warning
+    {
+        background-image: url('via://console/images/warning.svg');
+        background-position: 9px 8px;
+        color: @background-color-warning;
+
+        &:hover, &:active
+        {
+            color: @background-color-warning;
+        }
+    }
+
+    &.console-error
+    {
+        background-image: url('via://console/images/error.svg');
+        background-position: 9px 8px;
+        color: @primary-color-down;
+
+        &:hover, &:active
+        {
+            color: @primary-color-down;
+        }
+    }
+
+    &.console-alert
+    {
+        background-image: url('via://console/images/alert.svg');
+        background-position: 9px 8px;
+        color: @primary-color;
+
+        &:hover, &:active
+        {
+            color: @primary-color;
         }
     }
 }
