@@ -1,6 +1,6 @@
 {
   "name": "console",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A visual representation of all of the informational and error messages that Via outputs.",
   "main": "./lib/main",
   "scripts": {
@@ -24,11 +24,11 @@
     "Console": "deserialize"
   },
   "consumedServices": {
-      "status-bar": {
-        "versions": {
-          "^0.1.0": "consumeStatusBar"
-        }
+    "status-bar": {
+      "versions": {
+        "^0.1.0": "consumeStatusBar"
       }
+    }
   },
   "configSchema": {}
 }
