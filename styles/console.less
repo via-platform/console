@@ -65,7 +65,7 @@
                 }
             }
 
-            &.console-warning, &.console-error, &.console-alert, &.console-info
+            &.console-warning, &.console-error, &.console-alert, &.console-info, &.console-system
             {
                 background: fade(@background-color-warning, 8%);
 
@@ -114,6 +114,17 @@
                 {
                     background: url('via://console/images/info.svg') 1px 1px no-repeat;
                     background-size: 10px auto;
+                }
+            }
+
+            &.console-system
+            {
+                background: fade(@primary-color, 8%);
+
+                &::before
+                {
+                    background: url('via://console/images/alert.svg') 0 0 no-repeat;
+                    background-size: 12px auto;
                 }
             }
         }
@@ -170,6 +181,18 @@
     }
 
     &.console-alert
+    {
+        background-image: url('via://console/images/alert.svg');
+        background-position: 9px 8px;
+        color: @primary-color;
+
+        &:hover, &:active
+        {
+            color: @primary-color;
+        }
+    }
+
+    &.console-system
     {
         background-image: url('via://console/images/alert.svg');
         background-position: 9px 8px;
