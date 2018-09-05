@@ -1,6 +1,6 @@
 {
   "name": "console",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A visual representation of all of the informational and error messages that Via outputs.",
   "main": "./lib/main",
   "scripts": {
